@@ -1,0 +1,22 @@
+main {
+	padding-top: 322px;
+}
+
+.newSingleWrapper {
+	margin-bottom: 130px;
+}
+.newSingleHeader {
+	margin: 0 0 10px;
+}
+.newSingleName {
+	font-size: 100px;
+	line-height: 150px;
+	font-weight: 700;
+	margin: 0 0 50px;
+	color: transparent;
+	-webkit-text-stroke: 1px #fff;
+}
+.newSinglePlayerWrapper {
+	height: 27px;
+	background-color: lightgrey;
+}

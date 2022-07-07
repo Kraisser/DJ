@@ -1,0 +1,103 @@
+.aboutUsWrapper {
+	display: grid;
+	grid-template-columns: [head-start descr-start list-start] 1fr [head-end descr-end list-end image-start] 1fr [image-end];
+	grid-template-rows: [head-start image-start] auto [head-end descr-start] auto [descr-end list-start] auto [list-end image-end];
+	grid-gap: 60px 125px;
+	margin-bottom: 150px;
+}
+.aboutUsHeaderWrapper {
+	grid-area: head;
+	display: grid;
+	grid-template-columns: auto 1fr;
+}
+.aboutUsHeaderWrapper img {
+	align-self: center;
+}
+.aboutUsHeader {
+	text-align: center;
+}
+
+.aboutUsDescrWrapper {
+	grid-area: descr;
+	display: grid;
+	grid-gap: 25px;
+}
+.aboutUsDescrWrapper p {
+	margin: 0;
+	line-height: 24px;
+	opacity: 0.7;
+}
+
+.aboutUsListWrapper {
+	grid-area: list;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 1fr 1fr;
+	grid-gap: 30px;
+}
+.aboutUsListItem {
+	display: flex;
+	align-items: center;
+}
+.aboutUsListItem span {
+	font-weight: 600;
+	font-size: 18px;
+	line-height: 27px;
+}
+.aboutUsListItemIcon {
+	background-color: var(--second-color);
+	width: 30px;
+	height: 30px;
+	border-radius: var(--sm-radius) 0;
+	margin-right: 20px;
+}
+
+.aboutUsImageWrapper {
+	grid-area: image;
+	position: relative;
+}
+.aboutUsImageWrapper img {
+	position: absolute;
+	border-radius: var(--def-radius) 0;
+}
+.aboutUsImageWrapper img:nth-child(1) {
+	top: 10%;
+	left: 10%;
+	z-index: 4;
+}
+.aboutUsImageWrapper img:nth-child(2) {
+	top: 20%;
+	left: 20%;
+	z-index: 3;
+	opacity: 0.3;
+}
+
+.aboutUsAdditWrapper {
+	position: relative;
+	margin-bottom: 265px;
+}
+.aboutUsAdditWrapper img {
+	position: absolute;
+	top: -30%;
+	right: 80px;
+	z-index: 3;
+	border-radius: var(--def-radius) 0;
+}
+.aboutUsAdditContainer {
+	padding: 50px 80px;
+	border-radius: var(--def-radius) 0;
+	border: solid 1px #fff;
+}
+.aboutUsAdditDescr {
+	position: relative;
+	max-width: 520px;
+	font-size: 18px;
+	line-height: 27px;
+	margin: 0 0 25px;
+	padding-bottom: 25px;
+	border-bottom: solid 1px #fff;
+	background: url('../assets/icons/descr.png') top left no-repeat;
+}
+.aboutUsAdditContainer a {
+	color: var(--second-color);
+}

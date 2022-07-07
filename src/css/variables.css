@@ -1,0 +1,9 @@
+body {
+	/* Colors */
+	--second-color: #7a66cc;
+
+	/* Border */
+	--def-radius: 30px;
+	--mid-radius: 20px;
+	--sm-radius: 10px;
+}
