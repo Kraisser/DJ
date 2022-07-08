@@ -1,0 +1,47 @@
+footer {
+}
+.socialWrapper {
+	display: grid;
+	grid-gap: 60px;
+	justify-content: center;
+	margin-bottom: 100px;
+}
+.socialWrapper .logoWrapper {
+	justify-self: center;
+}
+.socialContacts {
+	display: grid;
+	grid-template: auto auto/ auto auto;
+	text-transform: uppercase;
+	justify-content: center;
+	grid-gap: 10px 30px;
+}
+.socialContacts div:nth-child(1),
+.socialContacts div:nth-child(3) {
+	text-align: right;
+}
+
+.socialNetworksWrapper {
+	display: grid;
+	grid-gap: 30px;
+	grid-template-columns: repeat(6, 60px);
+	grid-template-rows: 1fr;
+	justify-content: center;
+}
+.socialNetworkItem {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 60px;
+	height: 60px;
+	background-color: var(--second-color);
+	border: solid 8px #2c2c2c;
+	border-radius: 50%;
+}
+
+.rights {
+	text-align: center;
+	text-transform: uppercase;
+	opacity: 0.5;
+	margin-bottom: 40px;
+}

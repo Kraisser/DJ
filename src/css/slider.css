@@ -1,0 +1,61 @@
+.sliderWrapper {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	overflow: hidden;
+	grid-gap: 30px;
+	margin-bottom: 180px;
+}
+.slideItem {
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+	border-radius: var(--def-radius) 0;
+	background-color: #2f2b2b;
+}
+.slideItem img {
+	border-radius: var(--def-radius) 0;
+	width: 350px;
+	height: 280px;
+}
+.slideContent {
+	position: relative;
+	padding: 30px 35px 20px;
+}
+.slideContent h4 {
+	font-weight: 700;
+	opacity: 0.5;
+	font-size: 18px;
+	line-height: 27px;
+	margin: 0 0 20px;
+}
+.clubName {
+	font-size: 18px;
+	line-height: 27px;
+	font-weight: 500;
+	margin-bottom: 46px;
+}
+.eventDate {
+	font-size: 16px;
+	line-height: 24px;
+	opacity: 0.5;
+	text-transform: uppercase;
+}
+.slideItemFooter {
+	display: flex;
+}
+.eventBut {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 180px;
+	height: 60px;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	background-color: var(--second-color);
+	border-radius: var(--def-radius) 0;
+	font-size: 16px;
+	line-height: 24px;
+	text-transform: uppercase;
+	cursor: pointer;
+}

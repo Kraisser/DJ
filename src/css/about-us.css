@@ -1,6 +1,6 @@
 .aboutUsWrapper {
 	display: grid;
-	grid-template-columns: [head-start descr-start list-start] 1fr [head-end descr-end list-end image-start] 1fr [image-end];
+	grid-template-columns: [head-start descr-start list-start] 6fr [head-end descr-end list-end image-start] 5fr [image-end];
 	grid-template-rows: [head-start image-start] auto [head-end descr-start] auto [descr-end list-start] auto [list-end image-end];
 	grid-gap: 60px 125px;
 	margin-bottom: 150px;
@@ -62,12 +62,12 @@
 }
 .aboutUsImageWrapper img:nth-child(1) {
 	top: 10%;
-	left: 10%;
+	left: 0;
 	z-index: 4;
 }
 .aboutUsImageWrapper img:nth-child(2) {
 	top: 20%;
-	left: 20%;
+	right: 0;
 	z-index: 3;
 	opacity: 0.3;
 }

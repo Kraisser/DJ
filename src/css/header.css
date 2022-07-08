@@ -6,14 +6,7 @@ header {
 	box-sizing: border-box;
 	padding: 30px 95px 0;
 }
-.logoWrapper {
-	display: grid;
-	grid-gap: 20px;
-	grid-template-columns: 60px 1fr;
-}
-.logoTitle {
-	align-self: center;
-}
+
 .nav {
 	display: grid;
 	align-items: center;
