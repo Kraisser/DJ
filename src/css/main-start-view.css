@@ -3,7 +3,7 @@ main {
 }
 
 .newSingleWrapper {
-	margin-bottom: 130px;
+	margin-bottom: 110px;
 }
 .newSingleHeader {
 	margin: 0 0 10px;
@@ -17,6 +17,37 @@ main {
 	-webkit-text-stroke: 1px #fff;
 }
 .newSinglePlayerWrapper {
-	height: 27px;
-	background-color: lightgrey;
+	display: grid;
+	grid-template-columns: 25px 1fr 120px;
+	align-items: center;
+	grid-gap: 45px;
+}
+.musicTimeLine {
+	background-color: #fff;
+	cursor: pointer;
+}
+.musicTimeLinePlayed {
+	position: relative;
+	height: 2px;
+	transition: width 0.2s linear;
+	width: 0%;
+	background-color: var(--second-color);
+}
+.musicTimeLinePlayed:after {
+	content: '';
+	display: block;
+	position: absolute;
+	right: 0;
+	top: -9px;
+	height: 20px;
+	width: 2px;
+	background-color: var(--second-color);
+}
+.musicTime {
+	font-size: 18px;
+	line-height: 27px;
+	display: flex;
+}
+.playerIcon {
+	cursor: pointer;
 }

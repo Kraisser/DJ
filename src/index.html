@@ -13,7 +13,7 @@
 		<title>Bright Light</title>
 	</head>
 	<body>
-		<ul class="content">
+		<div class="content">
 			<header>
 				<div class="logoWrapper">
 					<img src="./assets/icons/Logo.png" alt="Logo" />
@@ -22,22 +22,22 @@
 				<nav class="nav">
 					<ul class="navMenu">
 						<li class="navMenuItem">
-							<a href="">About</a>
+							<a href="#news">News</a>
 						</li>
 						<li class="navMenuItem">
-							<a href="">News</a>
+							<a href="#about">About</a>
 						</li>
 						<li class="navMenuItem">
-							<a href="">Music</a>
+							<a href="#music">Music</a>
 						</li>
 						<li class="navMenuItem">
-							<a href="">Media</a>
+							<a href="#media">Media</a>
 						</li>
 						<li class="navMenuItem">
-							<a href="">Tours</a>
+							<a href="#tours">Tours</a>
 						</li>
 						<li class="navMenuItem">
-							<a href="">Contacts</a>
+							<a href="#contacts">Contacts</a>
 						</li>
 					</ul>
 				</nav>
@@ -46,9 +46,21 @@
 				<section class="newSingleWrapper">
 					<h2 class="sectionHeader newSingleHeader">New Single</h2>
 					<h1 class="newSingleName">War For Love</h1>
-					<div class="newSinglePlayerWrapper"></div>
+					<div class="newSinglePlayerWrapper">
+						<img src="./assets/icons/play.png" alt="play" id="newSinglePlay" class="playerIcon" />
+						<div id="newSingleTimeLine" class="musicTimeLine">
+							<div class="musicTimeLinePlayed"></div>
+						</div>
+						<div id="newSingleTimeEnd" class="musicTime">
+							<div>00:00</div>
+							<div>-</div>
+							<div>00:00</div>
+						</div>
+						<audio src="./assets/music/Bright Lights - War For Love.mp3"></audio>
+					</div>
 				</section>
 
+				<a name="news" class="anchorLink anchorLink-20"></a>
 				<section class="newsWrapper">
 					<div class="newsItemWrapper">
 						<div class="newsContentWrapper">
@@ -74,7 +86,7 @@
 						</div>
 					</div>
 				</section>
-
+				<a name="about" class="anchorLink"></a>
 				<section class="aboutUsWrapper">
 					<div class="aboutUsHeaderWrapper">
 						<img src="./assets/icons/graphs.png" alt="graph" />
@@ -131,6 +143,7 @@
 					</div>
 				</section>
 
+				<a name="music" class="anchorLink"></a>
 				<section class="lastTrackWrapper">
 					<div class="lastTrackPhotoBorder">
 						<div class="lastTrackPhotoBorder2">
@@ -144,113 +157,186 @@
 					</div>
 
 					<div class="lastTrackPlayerWrapper">
+						<img src="./assets/icons/play.png" alt="play" id="lastTrackPlay" class="playerIcon" />
+						<div id="lastTrackTimeLine" class="musicTimeLine">
+							<div class="musicTimeLinePlayed"></div>
+						</div>
+						<div id="lastTrackTimeEnd" class="musicTime">
+							<div>00:00</div>
+							<div>-</div>
+							<div>00:00</div>
+						</div>
 					</div>
 
-					<ol class="lastTrackList">
-						<li class="lastTrackItem lastTrackItem-active">
-							3LAU, Bright Lights — How You Love Me</li>
+					<ol class="lastTrackList" id="lastTrackList">
 						<li class="lastTrackItem">
-							Bright Lights, Kaleena Zanders, Kandy — War For Love</li>
+							3LAU, Bright Lights — How You Love Me
+							<audio src="./assets/music/3LAU feat. Bright Lights - How You Love Me.mp3"></audio>
+						</li>
 						<li class="lastTrackItem">
-							Pink Is Punk, Benny Benassi, Bright Lights — Ghost</li>
+							Bright Lights, Kaleena Zanders, Kandy — War For Love
+							<audio src="./assets/music/Bright Lights - War For Love.mp3"></audio>
+						</li>
 						<li class="lastTrackItem">
-							Hardwell, Dyro, Bright Lights — Never Say Goodbye</li>
+							Pink Is Punk, Benny Benassi, Bright Lights — Ghost
+							<audio
+								src="./assets/music/Pink Is Punk & Benny Benassi feat. Bright Lights - Ghost (Original Extended).mp3"
+							></audio>
+						</li>
 						<li class="lastTrackItem">
-							Zeds Dead, Dirtyphonics, Bright Lights — Where Are You Now</li>
+							Hardwell, Dyro, Bright Lights — Never Say Goodbye
+							<audio
+								src="./assets/music/Hardwell, Dyro, Bright Lights - Never Say Goodbye feat. Bright Lights (Wildstylez Remix).mp3"
+							></audio>
+						</li>
 						<li class="lastTrackItem">
-							Zedd, Bright Lights — Follow You Down</li>
+							Zeds Dead, Dirtyphonics, Bright Lights — Where Are You No
+							<audio
+								src="./assets/music/Zeds Dead & Dirtyphonics feat. Bright Lights - Where Are You Now.mp3"
+							></audio>
+						</li>
+						<li class="lastTrackItem">
+							Zedd, Bright Lights — Follow You Down
+							<audio src="./assets/music/Zedd, Bright Lights - Follow You Down.mp3"></audio>
+						</li>
 					</ol>
 
 					<div class="lastTrackFollowWrapper">
 						<div class="lastTrackFollowHeader">Follow me:</div>
 						<div class="lastTrackFollowItems">
 							<div>
-								<img src="./assets/icons/Spotify.png" alt="Spotify">
+								<img src="./assets/icons/Spotify.png" alt="Spotify" />
 								<span>Spotify</span>
 							</div>
 							<div>
-								<img src="./assets/icons/iTunes.png" alt="iTunes">
+								<img src="./assets/icons/iTunes.png" alt="iTunes" />
 								<span>iTunes</span>
 							</div>
 						</div>
 					</div>
 				</section>
-
+				<a name="media" class="anchorLink anchorLink-20"></a>
 				<section class="galleryWrapper">
 					<div class="galleryPhoto">
-						<img src="./assets/images/gallery-1.jpg" alt="gallery1" class="">
+						<img src="./assets/images/gallery-1.jpg" alt="gallery1" class="" />
 						<div class="galleryContent">
-							<span>
-								EDC Las Vegas Mainstage
-							</span>
+							<span> EDC Las Vegas Mainstage </span>
 						</div>
 					</div>
 					<div class="galleryPhoto">
-						<img src="./assets/images/gallery-2.jpg" alt="gallery2" class="">
+						<img src="./assets/images/gallery-2.jpg" alt="gallery2" class="" />
 						<div class="galleryContent">
-							<span>
-								EDC Las Vegas Mainstage
-							</span>
+							<span> EDC Las Vegas Mainstage </span>
 						</div>
 					</div>
 					<div class="galleryPhoto">
-						<img src="./assets/images/gallery-3.jpg" alt="gallery3" class="">
+						<img src="./assets/images/gallery-3.jpg" alt="gallery3" class="" />
 						<div class="galleryContent">
-							<span>
-								EDC Las Vegas Mainstage
-							</span>
+							<span> EDC Las Vegas Mainstage </span>
 						</div>
 					</div>
 					<div class="galleryPhoto">
-						<img src="./assets/images/gallery-4.jpg" alt="gallery4" class="">
+						<img src="./assets/images/gallery-4.jpg" alt="gallery4" class="" />
 						<div class="galleryContent">
-							<span>
-								EDC Las Vegas Mainstage
-							</span>
+							<span> EDC Las Vegas Mainstage </span>
 						</div>
 					</div>
 					<div class="galleryPhoto">
-						<img src="./assets/images/gallery-5.jpg" alt="gallery5" class="">
+						<img src="./assets/images/gallery-5.jpg" alt="gallery5" class="" />
 						<div class="galleryContent">
-							<span>
-								EDC Las Vegas Mainstage
-							</span>
+							<span> EDC Las Vegas Mainstage </span>
 						</div>
 					</div>
 				</section>
 
-				<section class="sliderWrapper">
-					<div class="slideItem">
-						<img src="./assets/images/event-1.jpg" alt="event-1">
-						<div class="slideContent">
-							<h4>Chandler, AZ</h4>
-							<div class="clubName">The Park at Wild Horse Pass</div>
-							<div class="eventDate">Apr 02 2021</div>
-							<buttton class="eventBut">tickets</buttton>
+				<a name="tours" class="anchorLink anchorLink-20"></a>
+				<section class="sectionSliderWrapper">
+					<div class="sliderWrapper">
+						<div class="sliderBut sliderButLeft">
+							<img src="./assets/icons/slider-arrow.png" alt="previous" />
 						</div>
-					</div>
-					<div class="slideItem">
-						<img src="./assets/images/event-2.jpg" alt="event-2">
-						<div class="slideContent">
-							<h4>Ibiza, IBZ</h4>
-							<div class="clubName">Swag Ibiza Club</div>
-							<div class="eventDate">Jul 08 2021</div>
-							<buttton class="eventBut">tickets</buttton>
+						<div class="sliderBut sliderButRight">
+							<img src="./assets/icons/slider-arrow.png" alt="next" />
 						</div>
-					</div>
-					<div class="slideItem">
-						<img src="./assets/images/event-3.jpg" alt="event-3">
-						<div class="slideContent">
-							<h4>Ibiza, IBZ</h4>
-							<div class="clubName">El Swing Ibiza</div>
-							<div class="eventDate">Jul 10 2021</div>
-							<buttton class="eventBut">tickets</buttton>
+						<div class="slideItems">
+							<div class="slideItem">
+								<img src="./assets/images/event-1.jpg" alt="event-1" />
+								<div class="slideContent">
+									<h4>Chandler, AZ</h4>
+									<div class="clubName">slide 1 The Park at Wild Horse Pass</div>
+									<div class="eventDate">Apr 02 2021</div>
+									<buttton class="eventBut">tickets</buttton>
+								</div>
+							</div>
+							<div class="slideItem">
+								<img src="./assets/images/event-2.jpg" alt="event-2" />
+								<div class="slideContent">
+									<h4>Ibiza, IBZ</h4>
+									<div class="clubName">slide 2 Swag Ibiza Club</div>
+									<div class="eventDate">Jul 08 2021</div>
+									<buttton class="eventBut">tickets</buttton>
+								</div>
+							</div>
+							<div class="slideItem">
+								<img src="./assets/images/event-3.jpg" alt="event-3" />
+								<div class="slideContent">
+									<h4>Ibiza, IBZ</h4>
+									<div class="clubName">slide 3 El Swing Ibiza</div>
+									<div class="eventDate">Jul 10 2021</div>
+									<buttton class="eventBut">tickets</buttton>
+								</div>
+							</div>
+							<div class="slideItem">
+								<img src="./assets/images/event-3.jpg" alt="event-4" />
+								<div class="slideContent">
+									<h4>Ibiza, IBZ</h4>
+									<div class="clubName">slide 4 El Swing Ibiza</div>
+									<div class="eventDate">Jul 10 2021</div>
+									<buttton class="eventBut">tickets</buttton>
+								</div>
+							</div>
+							<div class="slideItem">
+								<img src="./assets/images/event-2.jpg" alt="event-5" />
+								<div class="slideContent">
+									<h4>Ibiza, IBZ</h4>
+									<div class="clubName">slide 5 Swag Ibiza Club</div>
+									<div class="eventDate">Jul 08 2021</div>
+									<buttton class="eventBut">tickets</buttton>
+								</div>
+							</div>
+							<div class="slideItem">
+								<img src="./assets/images/event-2.jpg" alt="event-6" />
+								<div class="slideContent">
+									<h4>Ibiza, IBZ</h4>
+									<div class="clubName">slide 6 Swag Ibiza Club</div>
+									<div class="eventDate">Jul 08 2021</div>
+									<buttton class="eventBut">tickets</buttton>
+								</div>
+							</div>
+							<div class="slideItem">
+								<img src="./assets/images/event-2.jpg" alt="event-7" />
+								<div class="slideContent">
+									<h4>Ibiza, IBZ</h4>
+									<div class="clubName">slide 7 Swag Ibiza Club</div>
+									<div class="eventDate">Jul 08 2021</div>
+									<buttton class="eventBut">tickets</buttton>
+								</div>
+							</div>
+							<div class="slideItem">
+								<img src="./assets/images/event-2.jpg" alt="event-8" />
+								<div class="slideContent">
+									<h4>Ibiza, IBZ</h4>
+									<div class="clubName">slide 8 Swag Ibiza Club</div>
+									<div class="eventDate">Jul 08 2021</div>
+									<buttton class="eventBut">tickets</buttton>
+								</div>
+							</div>
 						</div>
 					</div>
 				</section>
-
 			</main>
 			<footer>
+				<a name="contacts" class="anchorLink"></a>
 				<div class="socialWrapper">
 					<div class="logoWrapper">
 						<img src="./assets/icons/Logo.png" alt="Logo" />
@@ -264,27 +350,27 @@
 					</div>
 					<div class="socialNetworksWrapper">
 						<div class="socialNetworkItem">
-							<img src="./assets/icons/iTune.png" alt="iTune">
+							<img src="./assets/icons/iTune.png" alt="iTune" />
 						</div>
 						<div class="socialNetworkItem">
-							<img src="./assets/icons/spotif.png" alt="spotif">
+							<img src="./assets/icons/spotif.png" alt="spotif" />
 						</div>
 						<div class="socialNetworkItem">
-							<img src="./assets/icons/inst.png" alt="inst">
+							<img src="./assets/icons/inst.png" alt="inst" />
 						</div>
 						<div class="socialNetworkItem">
-							<img src="./assets/icons/youtube.png" alt="youtube">
+							<img src="./assets/icons/youtube.png" alt="youtube" />
 						</div>
 						<div class="socialNetworkItem">
-							<img src="./assets/icons/twitter.png" alt="twitter">
+							<img src="./assets/icons/twitter.png" alt="twitter" />
 						</div>
 						<div class="socialNetworkItem">
-							<img src="./assets/icons/facebook.png" alt="facebook">
+							<img src="./assets/icons/facebook.png" alt="facebook" />
 						</div>
 					</div>
 				</div>
 
-				<div class="rights">©  2020 DJ bright lights.</div>
+				<div class="rights">© 2020 DJ bright lights.</div>
 			</footer>
 		</div>
 	</body>

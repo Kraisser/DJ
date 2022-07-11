@@ -3,7 +3,7 @@
 	grid-template-columns: [image-start] 1fr [image-end header-start player-start list-start follow-start] 1fr [header-end player-end list-end follow-end];
 	grid-template-rows: [image-start header-start] auto [header-end player-start] auto [player-end list-start] auto [list-end follow-start] auto [image-end follow-end];
 	grid-gap: 60px 30px;
-	margin-bottom: 180px;
+	margin-bottom: 160px;
 }
 
 .lastTrackPhotoBorder {
@@ -34,12 +34,11 @@
 	align-items: center;
 }
 .lastTrackPlayerWrapper {
-	background-color: lightgrey;
-	height: 27px;
-}
-
-.lastTrackPlayerWrapper {
 	grid-area: player;
+	display: grid;
+	grid-template-columns: 25px 1fr 120px;
+	grid-gap: 45px;
+	align-items: center;
 }
 
 .lastTrackList {
@@ -51,17 +50,27 @@
 	counter-reset: track-counter;
 }
 .lastTrackItem:before {
+	display: block;
 	content: counter(track-counter);
 	counter-increment: track-counter;
-	margin-right: 20px;
 	font-size: 14px;
 	line-height: 21px;
 	opacity: 0.5;
 }
 .lastTrackItem {
+	display: grid;
+	grid-template-columns: auto 1fr;
+	align-items: center;
+	grid-gap: 20px;
 	font-size: 18px;
 	line-height: 27px;
 	font-weight: 600;
+	cursor: pointer;
+	transition: transform 0.1s ease;
+	transition: color 0.1s ease;
+}
+.lastTrackItem:hover {
+	transform: scale(1.01);
 }
 .lastTrackItem-active {
 	color: var(--second-color);

@@ -4,7 +4,7 @@
 		'img1 img2 img3 img4'
 		'img1 img5 img5 img4';
 	grid-gap: 30px;
-	margin-bottom: 180px;
+	margin-bottom: 160px;
 }
 .galleryPhoto {
 	position: relative;
@@ -28,6 +28,7 @@
 	grid-area: img5;
 }
 .galleryPhoto img {
+	transition: transform 0.15s ease;
 	z-index: 3;
 	border-radius: var(--def-radius) 0;
 }
@@ -55,4 +56,7 @@
 }
 .galleryPhoto:hover .galleryContent {
 	opacity: 1;
+}
+.galleryPhoto:hover img {
+	transform: scale(1.1);
 }

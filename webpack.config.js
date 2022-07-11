@@ -51,6 +51,11 @@ module.exports = {
 				type: 'asset/resource',
 			},
 			{
+				test: /\.m?mp3$/,
+				exclude: /node_modules/,
+				type: 'asset/resource',
+			},
+			{
 				test: /\.(woff(2)?|eot|ttf|otf|svg|)$/,
 				exclude: /node_modules/,
 				type: 'asset/inline',
