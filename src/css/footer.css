@@ -45,3 +45,11 @@ footer {
 	opacity: 0.5;
 	margin-bottom: 40px;
 }
+
+/* Media */
+@media only all and (max-width: 992px) {
+	.socialWrapper {
+		grid-gap: 30px;
+		margin-bottom: 60px;
+	}
+}

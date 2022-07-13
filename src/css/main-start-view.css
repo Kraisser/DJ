@@ -51,3 +51,13 @@ main {
 .playerIcon {
 	cursor: pointer;
 }
+
+/* Media */
+@media only all and (max-width: 992px) {
+	.newSingleWrapper {
+		margin-bottom: 60px;
+	}
+	.newSingleName {
+		margin-bottom: 30px;
+	}
+}

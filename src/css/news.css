@@ -31,3 +31,9 @@
 .newsItemWrapper:nth-child(3) {
 	background: url('../assets/images/news-3.jpg') no-repeat top center;
 }
+
+@media only all and (max-width: 992px) {
+	.newsWrapper {
+		margin-bottom: 90px;
+	}
+}

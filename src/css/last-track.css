@@ -101,3 +101,19 @@
 	font-size: 14px;
 	line-height: 21px;
 }
+
+/* Media */
+@media only all and (max-width: 992px) {
+	.lastTrackWrapper {
+		grid-template-columns: [header-start image-start player-start list-start follow-start] 1fr [header-end image-end player-end list-end follow-end];
+		grid-template-rows: [header-start] auto [header-end image-start] auto [image-end player-start] auto [player-end list-start] auto [list-end follow-start] auto [ follow-end];
+		grid-gap: 30px;
+		margin-bottom: 90px;
+	}
+	.lastTrackPhotoBorder {
+		justify-self: center;
+	}
+	.lastTrackFollowWrapper {
+		justify-self: end;
+	}
+}

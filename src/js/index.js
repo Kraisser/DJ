@@ -17,7 +17,7 @@ import slider from './modules/slider';
 
 const newSinglePlayer = {
 	currentPlayer: null,
-	track: document.querySelector('#newSinglePlay ~ audio').getAttribute('src'),
+	audioEl: document.querySelector('#newSingleAudio'),
 	constrols: {
 		playBut: document.querySelector('#newSinglePlay'),
 		timeLine: document.querySelector('#newSingleTimeLine'),
@@ -36,28 +36,35 @@ const lastTrackPlayer = {
 	},
 };
 
-newSinglePlayer.currentPlayer = audio(newSinglePlayer.track, newSinglePlayer.constrols);
-
 const removeActivePlayerStyle = () => {
 	lastTrackPlayer.trackList.forEach((item) => item.classList.remove('lastTrackItem-active'));
+};
+
+const pauseLastTrack = () => {
+	if (lastTrackPlayer.currentPlayer) {
+		lastTrackPlayer.currentPlayer.stop();
+	}
 };
 
 const setActiveTrack = (item, noAutoPlay) => {
 	removeActivePlayerStyle();
 
 	item.classList.add('lastTrackItem-active');
-	const musicSrc = item.querySelector('audio').getAttribute('src');
+	const audioEl = item.querySelector('audio');
 
 	if (lastTrackPlayer.currentPlayer) {
 		lastTrackPlayer.currentPlayer.remove();
 	}
 
-	lastTrackPlayer.currentPlayer = audio(musicSrc, lastTrackPlayer.controls);
+	lastTrackPlayer.currentPlayer = audio(audioEl, lastTrackPlayer.controls);
 
 	if (noAutoPlay) {
 		return;
 	}
 	lastTrackPlayer.currentPlayer.playTrigger();
+	if (newSinglePlayer.currentPlayer) {
+		newSinglePlayer.currentPlayer.stop();
+	}
 };
 
 lastTrackPlayer.trackContainer.addEventListener('click', (e) => {
@@ -67,6 +74,12 @@ lastTrackPlayer.trackContainer.addEventListener('click', (e) => {
 });
 
 setActiveTrack(lastTrackPlayer.trackList[0], true);
+
+newSinglePlayer.currentPlayer = audio(
+	newSinglePlayer.audioEl,
+	newSinglePlayer.constrols,
+	pauseLastTrack
+);
 
 // Smooth
 const smoothLinks = document.querySelectorAll('a[href^="#"]');

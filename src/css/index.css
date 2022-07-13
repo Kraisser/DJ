@@ -36,3 +36,14 @@ body {
 	display: block;
 	height: 20px;
 }
+
+@media only all and (max-width: 1300px) {
+	.content {
+		padding: 0 30px;
+	}
+}
+@media only all and (max-width: 992px) {
+	.logoWrapper {
+		justify-self: center;
+	}
+}

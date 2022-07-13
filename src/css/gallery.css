@@ -31,6 +31,7 @@
 	transition: transform 0.15s ease;
 	z-index: 3;
 	border-radius: var(--def-radius) 0;
+	object-fit: contain;
 }
 .galleryContent {
 	display: flex;
@@ -59,4 +60,17 @@
 }
 .galleryPhoto:hover img {
 	transform: scale(1.1);
+}
+
+/* Media */
+@media only all and (max-width: 992px) {
+	.galleryWrapper {
+		grid-template-areas:
+			'img1 img4'
+			'img2 img3'
+			'img5 img5';
+		justify-items: center;
+		justify-content: center;
+		margin-bottom: 90px;
+	}
 }

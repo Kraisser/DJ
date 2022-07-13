@@ -1,19 +1,28 @@
 import pauseIcon from '../../assets/icons/pause.png';
 import playIcon from '../../assets/icons/play.png';
 
-export default function audio(url, controls) {
-	const audioObj = new Audio(url);
-
-	const info = {
-		duration: 0,
-	};
-
-	audioObj.volume = 0.4;
+export default function audio(audioEl, controls, pauseOther) {
+	const audioSrc = audioEl.getAttribute('src');
+	const audioObj = new Audio(audioSrc);
 
 	const {playBut, timeLine, fullTime} = controls;
-
-	const playedTarget = fullTime.querySelector('div:nth-child(1)');
 	const progressTimeLine = timeLine.querySelector('.musicTimeLinePlayed');
+	const playedTarget = fullTime.querySelector('div:nth-child(1)');
+	const durationTarget = fullTime.querySelector('div:nth-child(3)');
+
+	let duration = 0;
+	audioObj.volume = 0.4;
+
+	const setMetaData = () => {
+		duration = Math.floor(audioObj.duration);
+
+		const min = Math.floor(duration / 60);
+		const sec = duration % 60;
+
+		const durationTime = `${min < 10 ? '0' + min : min}:${sec < 10 ? '0' + sec : sec}`;
+
+		durationTarget.innerHTML = durationTime;
+	};
 
 	const onClickTimeLine = (e) => {
 		const width = e.currentTarget.clientWidth;
@@ -21,15 +30,24 @@ export default function audio(url, controls) {
 
 		const newProgress = (clickPos / width) * 100;
 
-		audioObj.currentTime = (info.duration * newProgress) / 100;
+		audioObj.currentTime = (duration * newProgress) / 100;
 	};
 
-	const playTrigger = () => (audioObj.paused ? audioObj.play() : stop());
+	const playTrigger = () => {
+		if (audioObj.paused) {
+			if (pauseOther) {
+				pauseOther();
+			}
+			audioObj.play();
+		} else {
+			stop();
+		}
+	};
 
 	const stop = () => audioObj.pause();
 
 	const setTimeLine = () => {
-		const progress = ((audioObj.currentTime / info.duration) * 100).toFixed(2);
+		const progress = ((audioObj.currentTime / duration) * 100).toFixed(2);
 
 		progressTimeLine.style.width = progress + '%';
 	};
@@ -39,25 +57,19 @@ export default function audio(url, controls) {
 
 		const min = Math.floor(fullSec / 60);
 		const sec = fullSec % 60;
+		const playedTime = `${min < 10 ? '0' + min : min}:${sec < 10 ? '0' + sec : sec}`;
 
-		playedTarget.innerHTML = `${min < 10 ? '0' + min : min}:${sec < 10 ? '0' + sec : sec}`;
+		playedTarget.innerHTML = playedTime;
 	};
 
-	audioObj.addEventListener('timeupdate', () => {
+	const timeUpdate = () => {
 		setTimeLine();
 		setTimeValue();
-	});
+	};
 
-	audioObj.addEventListener('loadedmetadata', () => {
-		info.duration = Math.floor(audioObj.duration);
+	audioObj.addEventListener('loadedmetadata', setMetaData);
 
-		const min = Math.floor(info.duration / 60);
-		const sec = info.duration % 60;
-
-		const durationTarget = fullTime.querySelector('div:nth-child(3)');
-
-		durationTarget.innerHTML = `${min < 10 ? '0' + min : min}:${sec < 10 ? '0' + sec : sec}`;
-	});
+	audioObj.addEventListener('timeupdate', timeUpdate);
 
 	audioObj.addEventListener('play', () => {
 		playBut.setAttribute('src', pauseIcon);
@@ -80,7 +92,7 @@ export default function audio(url, controls) {
 
 	return {
 		remove,
-		playTrigger,
 		stop,
+		playTrigger,
 	};
 }
