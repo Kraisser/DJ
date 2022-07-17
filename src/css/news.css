@@ -1,12 +1,13 @@
 .newsWrapper {
 	display: grid;
-	grid-template: 300px / 1fr 1fr 1fr;
+	grid-template: repeat(auto-fit, 300px) / 1fr 1fr 1fr;
 	grid-gap: 30px;
 	margin-bottom: 180px;
 }
 .newsItemWrapper {
 	border-radius: var(--mid-radius) 0;
 	display: grid;
+	min-height: 300px;
 	grid-template: 90px/ 1fr;
 	align-content: end;
 }
@@ -35,5 +36,12 @@
 @media only all and (max-width: 992px) {
 	.newsWrapper {
 		margin-bottom: 90px;
+	}
+}
+@media only all and (max-width: 768px) {
+	.newsWrapper {
+		justify-content: center;
+		grid-template-columns: repeat(auto-fill, 300px);
+		grid-template-rows: repeat(auto-fit, 300px);
 	}
 }

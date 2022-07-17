@@ -21,10 +21,90 @@ header {
 .navMenuItem {
 	text-align: center;
 }
-.navMenuItem a {
+.navMenuItem a,
+.burgerLink {
 	color: #fff;
 	text-decoration: none;
 	cursor: pointer;
+}
+.burgerMenuWrapper {
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 100%;
+	right: 0;
+	height: 100%;
+	background-color: #1c1b21;
+	opacity: 0.8;
+	transition: left 0.5s ease;
+	overflow: hidden;
+	padding: 0 60px;
+	z-index: 6;
+}
+.burgerMenuWrapper.burgerMenuActive {
+	left: 0;
+}
+.burgerMenu {
+	margin: 0;
+	padding: 30px;
+	display: grid;
+	grid-template-rows: repeat(auto-fit, 40px);
+	grid-gap: 30px;
+	list-style-type: none;
+}
+.burgerItem {
+	justify-self: center;
+}
+#burgerButton {
+	display: none;
+	align-items: center;
+	position: absolute;
+	right: 10px;
+	width: 50px;
+	height: 51px;
+	cursor: pointer;
+	z-index: 7;
+	overflow: hidden;
+}
+#burgerButton span {
+	position: absolute;
+	left: 10%;
+	background-color: var(--second-color);
+	height: 5px;
+	width: 80%;
+	border-radius: 1px;
+	transition: all 0.4s ease-in;
+	transform: rotate(0) translate(0);
+	opacity: 1;
+}
+#burgerButton span:nth-child(1) {
+	top: 9px;
+}
+#burgerButton span:nth-child(2) {
+	top: 23px;
+}
+#burgerButton span:nth-child(3) {
+	bottom: 9px;
+}
+
+.burger-active span:nth-child(1) {
+	animation: span1Open 0.5s ease forwards;
+}
+.burger-active span:nth-child(2) {
+	animation: span2Open 0.5s ease forwards;
+}
+.burger-active span:nth-child(3) {
+	animation: span3Open 0.5s ease forwards;
+}
+
+.burger-closed span:nth-child(1) {
+	animation: span1Close 0.5s ease reverse forwards;
+}
+.burger-closed span:nth-child(2) {
+	animation: span2Close 0.5s ease reverse forwards;
+}
+.burger-closed span:nth-child(3) {
+	animation: span3Close 0.5s ease reverse forwards;
 }
 
 /* Media */
@@ -38,5 +118,112 @@ header {
 		grid-template: auto auto/1fr;
 		grid-gap: 30px;
 		align-items: center;
+	}
+}
+@media only all and (max-width: 768px) {
+	header {
+		grid-gap: 0;
+		/* position: relative; */
+	}
+	.burgerMenuWrapper {
+		display: grid;
+	}
+	#burgerButton {
+		display: grid;
+	}
+	.nav {
+		display: none;
+	}
+}
+
+@keyframes span1Open {
+	from {
+		transform: rotate(0);
+	}
+	33% {
+		transform: rotate(90deg);
+	}
+	66% {
+		transform: rotate(90deg) translateX(14px);
+	}
+	100% {
+		transform: rotate(135deg) translate(10px, -10px);
+	}
+}
+@keyframes span2Open {
+	from {
+		width: 80%;
+		opacity: 1;
+	}
+	33% {
+		width: 0;
+		opacity: 0.5;
+	}
+	66% {
+		width: 0;
+		opacity: 0;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+@keyframes span3Open {
+	from {
+		transform: rotate(0);
+	}
+	33% {
+		transform: rotate(-90deg);
+	}
+	66% {
+		transform: rotate(-90deg) translateX(14px);
+	}
+	100% {
+		transform: rotate(-135deg) translate(10px, 10px);
+	}
+}
+
+@keyframes span1Close {
+	from {
+		transform: rotate(0);
+	}
+	33% {
+		transform: rotate(90deg);
+	}
+	66% {
+		transform: rotate(90deg) translateX(14px);
+	}
+	100% {
+		transform: rotate(135deg) translate(10px, -10px);
+	}
+}
+@keyframes span2Close {
+	from {
+		width: 80%;
+		opacity: 1;
+	}
+	33% {
+		width: 0;
+		opacity: 0.5;
+	}
+	66% {
+		width: 0;
+		opacity: 0;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+@keyframes span3Close {
+	from {
+		transform: rotate(0);
+	}
+	33% {
+		transform: rotate(-90deg);
+	}
+	66% {
+		transform: rotate(-90deg) translateX(14px);
+	}
+	100% {
+		transform: rotate(-135deg) translate(10px, 10px);
 	}
 }

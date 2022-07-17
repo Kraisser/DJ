@@ -134,3 +134,32 @@
 		margin-left: -60px;
 	}
 }
+@media only all and (max-width: 768px) {
+	.slideItems {
+		max-width: 300px;
+	}
+	.sliderBut {
+		top: calc(50% - 30px);
+	}
+	.sliderButRight {
+		right: 0;
+		margin-right: 0;
+	}
+	.sliderButLeft {
+		left: 0;
+		margin-left: 0;
+	}
+}
+@media only all and (max-width: 480px) {
+	.sliderButRight {
+		right: 50%;
+		margin-right: -60px;
+	}
+	.sliderButLeft {
+		left: 50%;
+		margin-left: -60px;
+	}
+	.sliderBut {
+		top: calc(100% + 20px);
+	}
+}

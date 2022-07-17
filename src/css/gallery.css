@@ -74,3 +74,21 @@
 		margin-bottom: 90px;
 	}
 }
+@media only all and (max-width: 768px) {
+	.galleryWrapper {
+		grid-template-areas:
+			'img1'
+			'img4'
+			'img2'
+			'img3'
+			'img5';
+	}
+	.galleryPhoto {
+		/* width: 100%; */
+		max-width: 80%;
+	}
+	.galleryPhoto img {
+		width: auto;
+		height: auto;
+	}
+}

@@ -53,3 +53,28 @@ footer {
 		margin-bottom: 60px;
 	}
 }
+@media only all and (max-width: 768px) {
+	.socialNetworksWrapper {
+		grid-template-columns: repeat(3, 60px);
+		grid-template-rows: repeat(2, auto);
+		grid-gap: 15px;
+	}
+	.socialContacts {
+		grid-gap: 10px 5px;
+		align-items: flex-end;
+	}
+}
+@media only all and (max-width: 480px) {
+	.socialContacts {
+		/* max-width: 350px; */
+		grid-template-columns: 1fr;
+		grid-template-rows: repeat(3, auto);
+	}
+	.socialContacts div,
+	.socialContacts div:nth-child(1) {
+		text-align: center;
+	}
+	.socialContacts div:nth-child(3) {
+		display: none;
+	}
+}

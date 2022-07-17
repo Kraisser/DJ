@@ -194,6 +194,15 @@
 		justify-self: center;
 	}
 }
+@media only all and (max-width: 480px) {
+	.aboutUsListWrapper {
+		grid-template: auto / 1fr;
+		justify-items: stretch;
+	}
+	.aboutUsAdditWrapper img {
+		width: 100%;
+	}
+}
 
 /* Animation */
 @keyframes imageChangeSlideBackground {

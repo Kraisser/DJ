@@ -15,6 +15,7 @@ body {
 	max-width: 1270px;
 	padding: 0 80px;
 	align-self: center;
+	overflow: hidden;
 }
 
 .logoWrapper {
@@ -43,7 +44,27 @@ body {
 	}
 }
 @media only all and (max-width: 992px) {
+	body {
+		background: url('../assets/background/header-background-992.jpg') #1c1b21 no-repeat top center;
+	}
 	.logoWrapper {
 		justify-self: center;
+	}
+}
+@media only all and (max-width: 768px) {
+	body {
+		background: url('../assets/background/header-background-768.jpg') #1c1b21 no-repeat top center;
+	}
+}
+@media only all and (max-width: 480px) {
+	body {
+		background: url('../assets/background/header-background-480.jpg') #1c1b21 no-repeat top center;
+	}
+	.content {
+		padding: 0 15px;
+	}
+	.sectionHeader {
+		font-size: 32px;
+		line-height: 1.5em;
 	}
 }

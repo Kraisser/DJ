@@ -14,7 +14,15 @@ import '../css/footer.css';
 import smoothScroll from './modules/smooth-scroll';
 import audio from './modules/audio';
 import slider from './modules/slider';
+import burger from './modules/burger-menu';
 
+// Burger
+const burgerBut = document.querySelector('#burgerButton');
+const burgerMenu = document.querySelector('.burgerMenuWrapper');
+
+burger(burgerMenu, burgerBut);
+
+// Player
 const newSinglePlayer = {
 	currentPlayer: null,
 	audioEl: document.querySelector('#newSingleAudio'),
