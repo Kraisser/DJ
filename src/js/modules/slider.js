@@ -1,3 +1,5 @@
+import debounce from './debounce';
+
 export default function slider(sliderWrapper) {
 	const slidesContainer = sliderWrapper.querySelector('.slideItems');
 	const prevBut = sliderWrapper.querySelector('.sliderButLeft');
@@ -7,8 +9,22 @@ export default function slider(sliderWrapper) {
 		slideNodeList[slideNodeList.length - 1],
 		...[...slideNodeList].slice(0, slideNodeList.length - 1),
 	];
-	const maxSlides = 5;
-	const translateStep = slideList[0].offsetWidth + 30;
+
+	let maxSlides = 5;
+	let translateStep = slideList[0].offsetWidth + 30;
+
+	const resizeCalc = debounce(() => {
+		const width = window.innerWidth;
+
+		if (width < 1300) {
+			maxSlides = 4;
+		} else if (width < 768) {
+			maxSlides = 3;
+		}
+
+		translateStep = slideList[0].offsetWidth + 30;
+		enterSlides();
+	}, 500);
 
 	const clearContainer = () => {
 		while (slidesContainer.firstChild) {
@@ -62,8 +78,10 @@ export default function slider(sliderWrapper) {
 		});
 	};
 
-	enterSlides();
+	resizeCalc();
 
 	nextBut.addEventListener('click', nextSlide, {once: true});
 	prevBut.addEventListener('click', prevSlide, {once: true});
+
+	window.addEventListener('resize', resizeCalc);
 }

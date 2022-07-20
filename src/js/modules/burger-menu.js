@@ -1,6 +1,5 @@
 export default function burger(burgerWrapper, burgerBut) {
 	const toggleMenu = () => {
-		console.log('toggle');
 		if (!burgerBut.classList.contains('burger-active')) {
 			burgerOpen();
 		} else {
@@ -9,7 +8,6 @@ export default function burger(burgerWrapper, burgerBut) {
 	};
 
 	const burgerOpen = () => {
-		console.log('open');
 		burgerBut.classList.remove('burger-closed');
 		burgerBut.classList.add('burger-active');
 
